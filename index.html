@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Text Encryptor</title>
+</head>
+<body>
+  <header>
+    <h1>Text Encryptor</h1>
+    <div id="selectionButtons">
+      <button id="encryptionButton" onclick="hideDecrypt()">Encryption</button>
+      <button id="decryptionButton" onclick="hideEncrypt()">Decryption</button>
+    </div>
+  </header>
+  <div id="encryptionHTML">
+    <textarea rows="5" cols="50" placeholder="Enter Your Message Here" name="textInputEncrypt" id="textInputEncrypt" onkeyup="collectAndSendInputsEncrypt()"></textarea>
+    <br>
+    <button id="clearEncryptButton" onclick="clearEncryptInput()">Clear Input Field</button>
+    <select name="levelDropdownEncrypt" id="levelDropdownEncrypt" onchange="collectAndSendInputsEncrypt()">
+      <option value="None">Encryption Level</option>
+      <option value="1">Level: 1</option>
+      <option value="2">Level: 2</option>
+      <option value="3">Level: 3</option>
+    </select>
+    <br>
+    <textarea readonly id="outputEncrypt" rows="5" cols="50" placeholder="Your Encrypted Message Will Appear Here"></textarea>
+  </div>
+  <div id="decryptionHTML" style="display: none">
+    <textarea rows="5" cols="50" placeholder="Enter Your Encrypted Message Here" name="textInputDecrypt" id="textInputDecrypt" onkeyup="collectAndSendInputsDecrypt()"></textarea>
+    <br>
+    <button id="clearDecryptButton" onclick="clearDecryptInput()">Clear Input Field</button>
+    <select name="levelDropdownDecrypt" id="levelDropdownDecrypt" onchange="collectAndSendInputsDecrypt()">
+      <option value="None">Decryption Level</option>
+      <option value="1">Level: 1</option>
+      <option value="2">Level: 2</option>
+      <option value="3">Level: 3</option>
+    </select>
+    <br>
+    <textarea readonly id="outputDecrypt" rows="5" cols="50" placeholder="Your Decrypted Message Will Appear Here"></textarea>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
